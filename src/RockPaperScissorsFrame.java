@@ -6,6 +6,12 @@ import java.util.Random;
 
 public class RockPaperScissorsFrame extends JFrame
 {
+    //ActionListener
+    ActionListener paperSelection = new PaperListener();
+    ActionListener quit = new QuitListener();
+    ActionListener rockSelection = new RockListener();
+    ActionListener scissorsSelection = new ScissorsListener();
+
     //Buttons
     JButton paperBtn;
     JButton quitBtn;
@@ -47,17 +53,13 @@ public class RockPaperScissorsFrame extends JFrame
     int screenWidth;
     int tiesNum;
 
+    //Random
+    Random rnd = new Random();
+
     //String
     String playerWinsStr;
     String computerWinsStr;
     String tiesStr;
-
-    private ActionListener quit = new QuitListener();
-    private ActionListener rockSelection = new RockListener();
-    private ActionListener paperSelection = new PaperListener();
-    private ActionListener scissorsSelection = new ScissorsListener();
-
-    Random rnd = new Random();
 
     public RockPaperScissorsFrame()
     {
@@ -99,13 +101,14 @@ public class RockPaperScissorsFrame extends JFrame
             topPnl.add(title);
         }
 
-        private void RPSDisplay() {
+        private void RPSDisplay()
+        {
             displayPnl = new JPanel();
             displayPnl.setBackground(new Color(33, 33, 33));
             gameResults = new JTextArea(20, 70);
+
             gameResults.setFont(new Font("SansSerif", Font.ITALIC, 12));
             scroll = new JScrollPane(gameResults);
-
             playerWinsTF = new JTextField("Player Wins: " + playerWinsNum);
             playerWinsTF.setEditable(false);
             computerWinsTF = new JTextField("Computer Wins: " + computerWinsNum);
@@ -114,13 +117,14 @@ public class RockPaperScissorsFrame extends JFrame
             tiesTF.setEditable(false);
 
             displayPnl.add(scroll);
-
         }
+
         private void ControlPanel()
         {
             controlPnl = new JPanel();
             controlPnl.setBackground(new Color(33, 33, 33));
             controlPnl.setLayout(new GridLayout(3, 3));
+
             controlPnl.add(playerWinsTF);
             playerWinsTF.setFont(new Font("Times New Roman", Font.PLAIN, 25));
             controlPnl.add(computerWinsTF);
@@ -178,7 +182,6 @@ public class RockPaperScissorsFrame extends JFrame
         }
 
 
-
     private class QuitListener implements ActionListener
     {
         public void actionPerformed(ActionEvent AE)
@@ -215,6 +218,8 @@ public class RockPaperScissorsFrame extends JFrame
             }
         }
     }
+
+
     private class PaperListener implements ActionListener
     {
         public void actionPerformed(ActionEvent AE)
@@ -243,6 +248,8 @@ public class RockPaperScissorsFrame extends JFrame
             }
         }
     }
+
+
     private class ScissorsListener implements ActionListener
     {
         public void actionPerformed(ActionEvent AE)
