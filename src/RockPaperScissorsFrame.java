@@ -160,7 +160,8 @@ public class RockPaperScissorsFrame extends JFrame
             scissorBtn.addActionListener(scissorsSelection);
             scissorBtn.setFont(new Font("Dialog", Font.BOLD, 14));
 
-            spaceBtn = new JButton("_");
+            //spaceBtn is here to take up space and center the quitBtn
+            spaceBtn = new JButton(" ");
             spaceBtn.setBackground(new Color(33, 33, 33));
             spaceBtn.setOpaque(true);
             spaceBtn.setFont(new Font("Dialog", Font.BOLD, 14));
@@ -169,15 +170,18 @@ public class RockPaperScissorsFrame extends JFrame
             quitBtn.addActionListener((ActionEvent ae) -> System.exit(0));
             quitBtn.setFont(new Font("Dialog", Font.BOLD, 14));
 
-            spaceBtn2 = new JButton("_");
+            //spaceBtn is here to take up space and center the quitBtn
+            spaceBtn2 = new JButton(" ");
             spaceBtn2.setBackground(new Color(33, 33, 33));
             spaceBtn2.setFont(new Font("Dialog", Font.BOLD, 14));
 
             controlPnl.add(rockBtn);
             controlPnl.add(paperBtn);
             controlPnl.add(scissorBtn);
+            //spaceBtn is here to take up space and center the quitBtn
             controlPnl.add(spaceBtn);
             controlPnl.add(quitBtn);
+            //spaceBtn is here to take up space and center the quitBtn
             controlPnl.add(spaceBtn2);
         }
 
