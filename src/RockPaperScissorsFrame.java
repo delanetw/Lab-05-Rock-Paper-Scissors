@@ -182,6 +182,7 @@ public class RockPaperScissorsFrame extends JFrame
         }
 
 
+
     private class QuitListener implements ActionListener
     {
         public void actionPerformed(ActionEvent AE)
